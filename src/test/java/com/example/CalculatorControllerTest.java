@@ -13,4 +13,10 @@ public class CalculatorControllerTest {
         String result = controller.add(2, 3);
         assertEquals("Addition of two numbers are:5", result);
     }
+
+    @Test
+    void testSub() {
+        String result = controller.sub(10, 4);
+        assertEquals("Subtraction of two numbers are:6", result);
+    }
 }

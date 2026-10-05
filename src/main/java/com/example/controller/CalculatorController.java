@@ -11,4 +11,9 @@ public class CalculatorController {
     public String add(@PathVariable int a, @PathVariable int b) {
         return "Addition of two numbers are:" + (a + b);
     }
+
+    @GetMapping("/sub/{a}/{b}")
+    public String sub(@PathVariable int a, @PathVariable int b) {
+        return "Subtraction of two numbers are:" + (a - b);
+    }
 }
