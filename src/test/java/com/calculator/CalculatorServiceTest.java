@@ -19,4 +19,23 @@ public class CalculatorServiceTest {
         assertEquals(5.0, calc.subtract(10.0, 5.0), "10 - 5 should equal 5");
         assertEquals(-10.0, calc.subtract(-5.0, 5.0), "-5 - 5 should equal -10");
     }
+
+    @Test
+    void testMultiplication() {
+        CalculatorService calc = new CalculatorService();
+        assertEquals(50.0, calc.multiply(10.0, 5.0), "10 * 5 should equal 50");
+        assertEquals(0.0, calc.multiply(10.0, 0.0), "10 * 0 should equal 0");
+    }
+
+    @Test
+    void testDivision() {
+        CalculatorService calc = new CalculatorService();
+        assertEquals(2.0, calc.divide(10.0, 5.0), "10 / 5 should equal 2");
+    }
+
+    @Test
+    void testDivisionByZero() {
+        CalculatorService calc = new CalculatorService();
+        assertThrows(ArithmeticException.class, () -> calc.divide(10.0, 0.0));
+    }
 }
