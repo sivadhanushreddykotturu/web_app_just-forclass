@@ -36,7 +36,7 @@
                 <h1 class="brand-title">🚨 Aegis Emergency Operations</h1>
                 <p style="color: var(--text-dim); font-size: 12px; margin-top: 4px;">Continuous Integration & Deployment via Jenkins & Tomcat</p>
             </div>
-            <span class="badge" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.15);">BUILD #3 - v1.0.2 (JUNIT 5 REGRESSION: 5/5 TESTS PASSED)</span>
+            <span class="badge" style="color: #b9ff66; border-color: rgba(185, 255, 102, 0.4); background: rgba(185, 255, 102, 0.2);">BUILD #4 - RELEASE v1.1.0 (DEPLOYED TO TOMCAT :9090)</span>
         </div>
 
         <div style="background: rgba(185, 255, 102, 0.08); border: 1px solid rgba(185, 255, 102, 0.2); border-radius: 14px; padding: 14px 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
