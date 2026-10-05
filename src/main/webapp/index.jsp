@@ -32,7 +32,7 @@
 </head>
 <body>
     <div class="calc-card">
-        <span class="badge" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.15);">BUILD #3 - MULTIPLY &amp; DIVIDE (4 TESTS)</span>
+        <span class="badge" style="color: #b9ff66; border-color: rgba(185, 255, 102, 0.4); background: rgba(185, 255, 102, 0.2);">BUILD #4 - PRODUCTION RELEASE v1.0.0 (DEPLOYED TO TOMCAT :9090)</span>
         <h1>🧮 Simple Calculator</h1>
         <p>Jenkins CI/CD Automation Web Application</p>
 

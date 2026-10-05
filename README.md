@@ -1,33 +1,39 @@
-# 🚨 Emergency Incident Response - Java Web App (CI/CD)
+# 🧮 Simple Calculator - Java Web Application (CI/CD)
 
-> **CI/CD Pipeline Demo Repository**  
-> **Target Server**: Apache Tomcat 10.1 (WAR Deployment)  
+> **CI/CD Pipeline Demo Repository for Class Review**  
+> **Target Server**: Apache Tomcat 10.1 (`calculator-web-app.war`)  
 > **Automation Engine**: Jenkins LTS CI/CD Pipeline
 
 ---
 
 ## 📌 Project Overview
-A Java Jakarta Web Application designed for rapid emergency incident reporting, casualty triage assessment, and automated CI/CD integration.
+A Java Jakarta Web Application featuring basic arithmetic operations (Addition, Subtraction, Multiplication, Division) with automated JUnit 5 tests, Maven build lifecycle, and Tomcat auto-deployment.
 
-- **Artifact**: `emergency-web-app.war`
-- **Servlet API**: Jakarta Servlet 6.0
-- **Testing Engine**: JUnit 5 Jupiter
-- **Build Engine**: Apache Maven 3.9.9
+- **Artifact**: `calculator-web-app.war`
+- **Supported Operations**: `+`, `-`, `*`, `/`
+- **Unit Testing**: JUnit 5 Jupiter (4 Automated Unit Tests)
+- **Deployment URL**: `http://localhost:9090/calculator-web-app/`
 
 ---
 
-## 🚀 Jenkins CI/CD Pipeline Commands
+## 🛠️ Jenkins CI/CD Build Progression (4 Commits)
 
-```bash
-# Build & Test
-mvn clean test
-
-# Package WAR
-mvn clean package
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│     Build #1    │ ──> │     Build #2    │ ──> │     Build #3    │ ──> │     Build #4    │
+│  Initial Commit │     │   Subtraction   │     │ Multiply/Divide │     │ Release v1.0.0  │
+│  Addition (1 T) │     │    (2 Tests)    │     │    (4 Tests)    │     │ Tomcat Deployed │
+└─────────────────┘     └─────────────────┘     └─────────────────┘     └─────────────────┘
 ```
 
 ---
 
-## 🧪 Endpoints & Views
-- `http://localhost:9090/emergency-web-app/` : Tactical Emergency Operations Dashboard
-- `http://localhost:9090/emergency-web-app/api/incidents` : Real-Time REST JSON Incident Feed
+## 🚀 Maven Commands
+
+```bash
+# Run unit tests
+mvn clean test
+
+# Build WAR package
+mvn clean package
+```
