@@ -30,4 +30,24 @@ public class EmergencyServiceTest {
         assertFalse(emergencyService.validateIncident("", 10));
         assertFalse(emergencyService.validateIncident("Storm", -5));
     }
+
+    @Test
+    void testCalculateSeverity() {
+        assertEquals("CRITICAL", emergencyService.calculateSeverity(50));
+        assertEquals("HIGH", emergencyService.calculateSeverity(15));
+        assertEquals("MODERATE", emergencyService.calculateSeverity(4));
+        assertEquals("LOW", emergencyService.calculateSeverity(0));
+    }
+
+    @Test
+    void testCalculateRequiredRescueUnits() {
+        assertEquals(7, emergencyService.calculateRequiredRescueUnits(18, "HAZMAT"));
+        assertEquals(7, emergencyService.calculateRequiredRescueUnits(42, "FLOOD"));
+        assertEquals(1, emergencyService.calculateRequiredRescueUnits(2, "FIRE"));
+    }
+
+    @Test
+    void testGetDeploymentReadinessScore() {
+        assertEquals(99.4, emergencyService.getDeploymentReadinessScore());
+    }
 }
