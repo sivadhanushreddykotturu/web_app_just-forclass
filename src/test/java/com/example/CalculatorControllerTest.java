@@ -19,4 +19,10 @@ public class CalculatorControllerTest {
         String result = controller.sub(10, 4);
         assertEquals("Subtraction of two numbers are:6", result);
     }
+
+    @Test
+    void testMul() {
+        String result = controller.mul(2, 3);
+        assertEquals("Multiplication of two numbers are:6", result);
+    }
 }
