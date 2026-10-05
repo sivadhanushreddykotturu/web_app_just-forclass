@@ -4,84 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aegis Emergency CI/CD Portal</title>
+    <title>Simple Calculator - Jenkins CI/CD</title>
     <style>
         :root {
-            --bg-dark: #0a0e17;
-            --card-bg: #121824;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
             --accent-lime: #b9ff66;
             --accent-blue: #38bdf8;
-            --accent-red: #f43f5e;
             --text-light: #f8fafc;
             --text-dim: #94a3b8;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-        body { background: var(--bg-dark); color: var(--text-light); min-height: 100vh; padding: 30px 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        .header-box { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 24px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .brand-title { font-size: 22px; font-weight: 800; color: #fff; }
-        .badge { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; background: rgba(185, 255, 102, 0.15); color: var(--accent-lime); border: 1px solid rgba(185, 255, 102, 0.3); }
-        .card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 24px; margin-bottom: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; }
-        .incident-card { background: #0a0e17; border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px; }
-        .tag-red { color: #fb7185; font-weight: 700; font-size: 11px; }
-        .tag-blue { color: #38bdf8; font-weight: 700; font-size: 11px; }
-        .btn { display: inline-block; background: var(--accent-lime); color: #0a0e17; font-weight: 700; font-size: 12px; padding: 8px 16px; border-radius: 20px; text-decoration: none; margin-top: 12px; }
+        body { background: var(--bg-dark); color: var(--text-light); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .calc-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 32px; width: 100%; max-width: 440px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; background: rgba(185, 255, 102, 0.15); color: var(--accent-lime); border: 1px solid rgba(185, 255, 102, 0.3); margin-bottom: 12px; }
+        h1 { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+        p { font-size: 12px; color: var(--text-dim); margin-bottom: 24px; }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-size: 12px; font-weight: 700; color: var(--text-dim); margin-bottom: 6px; text-transform: uppercase; }
+        input, select { width: 100%; background: #0a0e17; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 12px 14px; color: #fff; font-size: 15px; outline: none; }
+        input:focus, select:focus { border-color: var(--accent-lime); }
+        .btn-calc { width: 100%; background: var(--accent-lime); color: #0a0e17; font-size: 14px; font-weight: 800; padding: 14px; border-radius: 12px; border: none; cursor: pointer; margin-top: 8px; transition: transform 0.1s; }
+        .btn-calc:hover { background: #a3e635; transform: translateY(-1px); }
+        .result-box { margin-top: 20px; background: #0a0e17; border: 1px solid rgba(185, 255, 102, 0.3); border-radius: 14px; padding: 16px; text-align: center; }
+        .result-val { font-size: 28px; font-weight: 800; color: var(--accent-lime); margin-top: 4px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header-box">
-            <div>
-                <h1 class="brand-title">🚨 Aegis Emergency Operations</h1>
-                <p style="color: var(--text-dim); font-size: 12px; margin-top: 4px;">Continuous Integration & Deployment via Jenkins & Tomcat</p>
-            </div>
-            <span class="badge" style="color: #b9ff66; border-color: rgba(185, 255, 102, 0.4); background: rgba(185, 255, 102, 0.2);">BUILD #4 - RELEASE v1.1.0 (DEPLOYED TO TOMCAT :9090)</span>
-        </div>
+    <div class="calc-card">
+        <span class="badge">BUILD #1 - ADDITION ENGINE</span>
+        <h1>🧮 Simple Calculator</h1>
+        <p>Jenkins CI/CD Automation Web Application</p>
 
-        <div style="background: rgba(185, 255, 102, 0.08); border: 1px solid rgba(185, 255, 102, 0.2); border-radius: 14px; padding: 14px 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-                <span style="font-size: 11px; color: var(--accent-lime); font-weight: 700; text-transform: uppercase;">Tactical Dispatch Readiness</span>
-                <div style="font-size: 18px; font-weight: 800; color: #fff;">99.4% Operational Response Score</div>
-            </div>
-            <span style="font-size: 12px; color: var(--text-dim);">Automated Triage: <b>ACTIVE</b></span>
-        </div>
-
-        <div class="card">
-            <h2 style="font-size: 16px; margin-bottom: 8px;">Active Incident Dispatch Feed</h2>
-            <p style="color: var(--text-dim); font-size: 13px;">Real-time automated incident registry monitored by Jenkins Pipeline.</p>
-            
-            <div class="grid">
-                <div class="incident-card">
-                    <div style="display:flex; justify-content:space-between; margin-bottom: 6px;">
-                        <span class="tag-red">CRITICAL</span>
-                        <span style="font-size:11px; color:var(--text-dim);">Sector Alpha</span>
-                    </div>
-                    <h3 style="font-size: 14px; font-weight: 700;">Flash Flood Inundation</h3>
-                    <p style="font-size: 12px; color: var(--text-dim); margin: 6px 0;">Casualties: 42 | Fleet: Rescue Delta</p>
-                </div>
-
-                <div class="incident-card">
-                    <div style="display:flex; justify-content:space-between; margin-bottom: 6px;">
-                        <span class="tag-red">CRITICAL</span>
-                        <span style="font-size:11px; color:var(--text-dim);">Sector Delta</span>
-                    </div>
-                    <h3 style="font-size: 14px; font-weight: 700;">Toxic Vapor Leak</h3>
-                    <p style="font-size: 12px; color: var(--text-dim); margin: 6px 0;">Casualties: 18 | Fleet: HAZMAT Unit 4</p>
-                </div>
-
-                <div class="incident-card">
-                    <div style="display:flex; justify-content:space-between; margin-bottom: 6px;">
-                        <span class="tag-blue">HIGH</span>
-                        <span style="font-size:11px; color:var(--text-dim);">Sector Gamma</span>
-                    </div>
-                    <h3 style="font-size: 14px; font-weight: 700;">Ridge Forest Wildfire</h3>
-                    <p style="font-size: 12px; color: var(--text-dim); margin: 6px 0;">Casualties: 7 | Fleet: Drone Recon</p>
-                </div>
+        <form action="calculate" method="post">
+            <div class="form-group">
+                <label>First Number</label>
+                <input type="number" step="any" name="num1" value="${num1 != null ? num1 : '10'}" required />
             </div>
 
-            <a href="api/incidents" target="_blank" class="btn">View Raw JSON API</a>
-        </div>
+            <div class="form-group">
+                <label>Operation</label>
+                <select name="operation">
+                    <option value="add" ${operation == 'add' ? 'selected' : ''}>➕ Addition (+)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Second Number</label>
+                <input type="number" step="any" name="num2" value="${num2 != null ? num2 : '5'}" required />
+            </div>
+
+            <button type="submit" class="btn-calc">Calculate Result</button>
+        </form>
+
+        <% if (request.getAttribute("hasResult") != null) { %>
+            <div class="result-box">
+                <span style="font-size: 12px; color: var(--text-dim);">Calculation Output</span>
+                <div class="result-val">${result}</div>
+            </div>
+        <% } %>
     </div>
 </body>
 </html>
