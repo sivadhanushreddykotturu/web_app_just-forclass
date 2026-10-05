@@ -36,7 +36,15 @@
                 <h1 class="brand-title">🚨 Aegis Emergency Operations</h1>
                 <p style="color: var(--text-dim); font-size: 12px; margin-top: 4px;">Continuous Integration & Deployment via Jenkins & Tomcat</p>
             </div>
-            <span class="badge">BUILD v1.0.0 (CI/CD VERIFIED)</span>
+            <span class="badge">BUILD #2 - v1.0.1 (FLEET CALCULATOR ADDED)</span>
+        </div>
+
+        <div style="background: rgba(185, 255, 102, 0.08); border: 1px solid rgba(185, 255, 102, 0.2); border-radius: 14px; padding: 14px 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <span style="font-size: 11px; color: var(--accent-lime); font-weight: 700; text-transform: uppercase;">Tactical Dispatch Readiness</span>
+                <div style="font-size: 18px; font-weight: 800; color: #fff;">99.4% Operational Response Score</div>
+            </div>
+            <span style="font-size: 12px; color: var(--text-dim);">Automated Triage: <b>ACTIVE</b></span>
         </div>
 
         <div class="card">
