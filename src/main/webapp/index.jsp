@@ -32,7 +32,7 @@
 </head>
 <body>
     <div class="calc-card">
-        <span class="badge">BUILD #1 - ADDITION ENGINE</span>
+        <span class="badge">BUILD #2 - SUBTRACTION ADDED (2 TESTS)</span>
         <h1>🧮 Simple Calculator</h1>
         <p>Jenkins CI/CD Automation Web Application</p>
 
@@ -46,6 +46,7 @@
                 <label>Operation</label>
                 <select name="operation">
                     <option value="add" ${operation == 'add' ? 'selected' : ''}>➕ Addition (+)</option>
+                    <option value="subtract" ${operation == 'subtract' ? 'selected' : ''}>➖ Subtraction (-)</option>
                 </select>
             </div>
 

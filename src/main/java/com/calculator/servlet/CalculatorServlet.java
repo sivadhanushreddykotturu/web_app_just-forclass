@@ -27,6 +27,8 @@ public class CalculatorServlet extends HttpServlet {
 
             if ("add".equalsIgnoreCase(operation)) {
                 result = calculatorService.add(num1, num2);
+            } else if ("subtract".equalsIgnoreCase(operation)) {
+                result = calculatorService.subtract(num1, num2);
             }
 
             req.setAttribute("num1", num1);
