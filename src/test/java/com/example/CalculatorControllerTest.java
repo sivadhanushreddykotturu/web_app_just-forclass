@@ -25,4 +25,10 @@ public class CalculatorControllerTest {
         String result = controller.mul(2, 3);
         assertEquals("Multiplication of two numbers are:6", result);
     }
+
+    @Test
+    void testDiv() {
+        String result = controller.div(10, 2);
+        assertEquals("Division of two numbers are:5", result);
+    }
 }

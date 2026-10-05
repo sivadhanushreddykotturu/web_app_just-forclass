@@ -21,4 +21,10 @@ public class CalculatorController {
     public String mul(@PathVariable int a, @PathVariable int b) {
         return "Multiplication of two numbers are:" + (a * b);
     }
+
+    @GetMapping("/div/{a}/{b}")
+    public String div(@PathVariable int a, @PathVariable int b) {
+        if (b == 0) return "Division by zero is not allowed";
+        return "Division of two numbers are:" + (a / b);
+    }
 }
